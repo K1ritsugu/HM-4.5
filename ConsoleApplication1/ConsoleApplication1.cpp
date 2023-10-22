@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include <string>
 char x;
-int number, flag = 0;
+int number;
 using namespace std;
 int Rome(char x)
 {
