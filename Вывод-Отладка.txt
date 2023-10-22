@@ -1,9 +1,0 @@
-﻿"ConsoleApplication1.exe" (Win32). Загружено "C:\Users\vfmem\source\repos\K1ritsugu\HM-4.5\x64\Debug\ConsoleApplication1.exe". Символы загружены.
-"ConsoleApplication1.exe" (Win32). Загружено "C:\Windows\System32\ntdll.dll". 
-"ConsoleApplication1.exe" (Win32). Загружено "C:\Windows\System32\kernel32.dll". 
-"ConsoleApplication1.exe" (Win32). Загружено "C:\Windows\System32\KernelBase.dll". 
-"ConsoleApplication1.exe" (Win32). Загружено "C:\Windows\System32\msvcp140d.dll". 
-"ConsoleApplication1.exe" (Win32). Загружено "C:\Windows\System32\vcruntime140d.dll". 
-"ConsoleApplication1.exe" (Win32). Загружено "C:\Windows\System32\vcruntime140_1d.dll". 
-"ConsoleApplication1.exe" (Win32). Загружено "C:\Windows\System32\ucrtbased.dll". 
-Поток 0x2344 завершился с кодом 0 (0x0).
