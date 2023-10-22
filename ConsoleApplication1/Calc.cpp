@@ -23,7 +23,7 @@ int Rome(char x)
 	case 'M':
 		return 1000;
 	}
-	return 0;
+	return -10000000;
 }
 int main()
 {
@@ -55,30 +55,14 @@ int main()
 		}
 	}
 	number += Rome(str[str.length() - 1]);
-	if (str.length() >= 3) {
-		for (int i = 0; i < str.length() - 2; i+=3) 
-		{
-			if ((Rome(str[i]) < Rome(str[i + 2])) && (Rome(str[i+1]) < Rome(str[i + 2]))){
-				cout << "Число не существует";
-				return 0;
-			}
-		}
-	}
-	if (str.length() >= 4) {
-		for (int i = 1; i < str.length() - 2; i+=3)
-		{
-			if ((Rome(str[i]) < Rome(str[i + 2])) && (Rome(str[i + 1]) < Rome(str[i + 2]))) {
-				cout << "Число не существует";
-				return 0;
-			}
-		}
-	}
-	if (str.length() >= 5) {
-		for (int i = 2; i < str.length() - 2; i+=3)
-		{
-			if ((Rome(str[i]) < Rome(str[i + 2])) && (Rome(str[i + 1]) < Rome(str[i + 2]))) {
-				cout << "Число не существует";
-				return 0;
+	for (int s = 0; s < 3; s++) {
+		if (str.length() >= 3+s) {
+			for (int i = s; i < str.length() - 2; i += 3)
+			{
+				if ((Rome(str[i]) < Rome(str[i + 2])) && (Rome(str[i + 1]) < Rome(str[i + 2]))) {
+					cout << "Число не существует";
+					return 0;
+				}
 			}
 		}
 	}
@@ -87,6 +71,10 @@ int main()
 		&& str.find("DM") == -1 && str.find("LM") == -1 && str.find("XM") == -1 && str.find("VM") == -1 && str.find("IM") == -1 && str.find("VV") == -1 && str.find("LL") == -1 && str.find("DD") == -1) {
 		if (str.find("IIII") == -1 && str.find("VVVV") == -1 && str.find("XXXX") == -1 && str.find("LLLL") == -1 && str.find("MMMM") == -1 && str.find("DDDD") == -1 && str.find("CCCC") == -1)
 		{
+			if (number <= 0) {
+				cout << "Число не существует";
+				return 0;
+			}
 			cout << number << endl;
 		}
 		else
