@@ -90,9 +90,17 @@ int main()
 				}
 			}
 		}
-		if (str.find("IIII") == -1 && str.find("VVVV") == -1 && str.find("XXXX") == -1 && str.find("LLLL") == -1 && str.find("MMMM") == -1 && str.find("DDDD") == -1 && str.find("CCCC") == -1)
-		{
-			cout << number << endl;
+		if (str.find("VX") == -1 && str.find("VL") == -1 && str.find("IL") == -1 && str.find("LC") == -1 && str.find("IC") == -1\
+			&& str.find("VC") == -1 && str.find("ID") == -1 && str.find("VD") == -1 && str.find("XD") == -1 && str.find("LD") == -1\
+			&& str.find("DM") == -1 && str.find("LM") == -1 && str.find("XM") == -1 && str.find("VM") == -1 && str.find("IM") == -1) {
+			if (str.find("IIII") == -1 && str.find("VVVV") == -1 && str.find("XXXX") == -1 && str.find("LLLL") == -1 && str.find("MMMM") == -1 && str.find("DDDD") == -1 && str.find("CCCC") == -1)
+			{
+				cout << number << endl;
+			}
+			else
+			{
+				cout << "Число не существует";
+			}
 		}
 		else
 		{
