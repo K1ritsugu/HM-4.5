@@ -1,22 +1,46 @@
 ﻿#include <iostream>
-#include <Windows.h>
-#include <math.h>
+#include <string>
+int m, c, coun, start, str1, h;
 using namespace std;
+int swap(char s) {
+	m = int(s) - 48;
+	if (m < 10) {
+		return m;
+	}
+	else {
+		return m - 7;
+	}
+
+}
 int main()
 {
-	HWND hWnd = GetConsoleWindow();
-	HDC hDC = GetDC(hWnd);
-	HPEN Pen = CreatePen(PS_SOLID, 2, RGB(255, 255, 255));
-	SelectObject(hDC, Pen);
-	MoveToEx(hDC, 0, 85, NULL);
-	LineTo(hDC, 200, 85);
-	MoveToEx(hDC, 100, 0, NULL);
-	LineTo(hDC, 100, 170);
-	for (float x = -8.0f; x <= 8.0f; x += 0.1)
-	{
-		MoveToEx(hDC, 10 * x + 100, -10 * sin(x) + 85, NULL);
-		LineTo(hDC, 10 * x + 100, -10 * sin(x) + 85);
+	string str;
+	setlocale(0, "");
+	cout << "Введите число в начальном основании" << endl;
+	cin >> str;
+	cout << "Введите начальное основание" << endl;
+	cin >> h;
+	cout << "Введите итоговое основание" << endl;
+	cin >> c;
+	if (h < 2 || h > 16 || c < 2 || c > 16) {
+		cout << "Ошибка";
+		return 0;
 	}
-	ReleaseDC(hWnd, hDC);
-	cin.get();
+	int itog_10 = 0;
+	int j = 0;
+
+	for (int i = str.length() - 1; i > -1; i--) {
+		if (swap(str[i]) < 0 || swap(str[i]) > 15) {
+			cout << "Ошибка";
+			return 0;
+		}
+		itog_10 += swap(str[i]) * pow(h, j);
+		j += 1;
+	}
+	string itog = "";
+	while (itog_10 > 0) {
+		itog = to_string(itog_10 % c) + itog;
+		itog_10 = itog_10 / c;
+	}
+	cout << itog;
 }
